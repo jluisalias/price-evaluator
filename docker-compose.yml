@@ -1,0 +1,11 @@
+services:
+  
+  crm:
+    build: ./prices/
+    container_name: price
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://crm-db:3306/crm?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_USERNAME: 'root'
+      DB_PASSWORD: 'kinglouie67'
