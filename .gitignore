@@ -1,6 +1,12 @@
 # Compiled class file
 *.class
 
+### IntelliJ IDEA ###
+.idea
+
+### Mac Files ###
+**/.DS_Store
+
 # Log file
 *.log
 
