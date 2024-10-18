@@ -1,11 +1,14 @@
+
+
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.6'
+	id "org.openapi.generator" version "7.8.0"
 }
 
 group = 'com.jlalias'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 java {
 	toolchain {
@@ -33,4 +36,11 @@ tasks.named('test') {
 
 tasks.named('jar') {
 	enabled = false
+}
+
+openApiGenerate {
+	generatorName.set("spring")
+	inputSpec.set("$rootDir/src/main/resources/prices_evaluator_api_description.yaml")
+	outputDir.set("$buildDir/generated")
+	configOptions.put("dateLibrary", "java8")
 }
