@@ -29,15 +29,15 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-18T10:28:11.007157+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-19T15:33:13.634283+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
 @Controller
 @RequestMapping("${openapi.thePriceEvaluator.base-path:/api}")
-public class ApiApiController implements ApiApi {
+public class PricesApiController implements PricesApi {
 
     private final NativeWebRequest request;
 
     @Autowired
-    public ApiApiController(NativeWebRequest request) {
+    public PricesApiController(NativeWebRequest request) {
         this.request = request;
     }
 

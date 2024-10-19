@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * ValidPriceResponse
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-18T10:28:11.007157+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-19T15:33:13.634283+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
 public class ValidPriceResponse {
 
   private String productId;

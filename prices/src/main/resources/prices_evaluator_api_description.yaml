@@ -6,10 +6,10 @@ info:
 servers:
   - url: https://localhost:8080/api
 tags:
-  - name: Prices API
+  - name: prices
     description: API to return the correct price for a particular product, moment in time and for a brand.
 paths:
-  /api/prices/getValidPrice:
+  /prices/getValidPrice:
     get:
       summary: Get applicable price for a product
       description: Get applicable price for a product in a particular date and for a brand.

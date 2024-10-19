@@ -35,17 +35,17 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-18T10:28:11.007157+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-19T15:33:13.634283+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
 @Validated
-@Tag(name = "api", description = "the api API")
-public interface ApiApi {
+@Tag(name = "prices", description = "the prices API")
+public interface PricesApi {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
 
     /**
-     * GET /api/prices/getValidPrice : Get applicable price for a product
+     * GET /prices/getValidPrice : Get applicable price for a product
      * Get applicable price for a product in a particular date and for a brand.
      *
      * @param applicabilityDate The date to check the price for (required)
@@ -69,7 +69,7 @@ public interface ApiApi {
     )
     @RequestMapping(
         method = RequestMethod.GET,
-        value = "/api/prices/getValidPrice",
+        value = "/prices/getValidPrice",
         produces = { "application/json" }
     )
     
