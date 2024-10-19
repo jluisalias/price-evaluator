@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  description: "Prices evaluator API developed using an API First approach, Hexagonal\
+    \ architecture and DDD."
+  title: The Price Evaluator API
+  version: 0.0.1
+servers:
+- url: https://localhost:8080/api
+tags:
+- description: "API to return the correct price for a particular product, moment in\
+    \ time and for a brand."
+  name: prices
+paths:
+  /prices/getValidPrice:
+    get:
+      description: Get applicable price for a product in a particular date and for
+        a brand.
+      operationId: getValidPrice
+      parameters:
+      - description: The date to check the price for
+        explode: true
+        in: query
+        name: applicabilityDate
+        required: true
+        schema:
+          format: date-time
+          type: string
+        style: form
+      - description: The ID of the product
+        explode: true
+        in: query
+        name: productId
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: brandId
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidPriceResponse"
+          description: Applicable price found!
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PriceNotFoundError"
+          description: Price not found for given parameters
+      summary: Get applicable price for a product
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    ValidPriceResponse:
+      example:
+        validityPeriod: validityPeriod
+        productId: productId
+        brandId: brandId
+        priceListId: priceListId
+        validPrice: validPrice
+      properties:
+        productId:
+          type: string
+        brandId:
+          type: string
+        priceListId:
+          type: string
+        validityPeriod:
+          type: string
+        validPrice:
+          type: string
+      type: object
+    PriceNotFoundError:
+      example:
+        message: message
+      properties:
+        message:
+          type: string
+      type: object
