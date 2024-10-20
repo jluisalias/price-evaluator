@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-19T15:33:13.634283+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-20T14:13:22.291533+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
 @Controller
 @RequestMapping("${openapi.thePriceEvaluator.base-path:/api}")
 public class PricesApiController implements PricesApi {
