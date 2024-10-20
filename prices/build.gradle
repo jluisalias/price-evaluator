@@ -41,6 +41,6 @@ tasks.named('jar') {
 openApiGenerate {
 	generatorName.set("spring")
 	inputSpec.set("$rootDir/src/main/resources/prices_evaluator_api_description.yaml")
-	outputDir.set("$rootDir/src/main/java/com/jlalias/openapi/generated")
+	outputDir.set("$rootDir/generated")
 	configOptions.put("dateLibrary", "java8")
 }
