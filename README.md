@@ -34,7 +34,14 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#swagger">Swagger</a></li>
+        <li><a href="#postman">Postman</a></li>
+        <li><a href="#tests">Tests</a></li>
+      </ul>
+    </li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -54,6 +61,7 @@ The definition provided for this project is in the following file:
 [![Springboot][Springboot]][Springboot-url]
 [![Docker][Docker]][Docker-url]
 [![OpenAPI][OpenAPI]][OpenAPI-url]
+[![Swagger][Swagger]][Swagger-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -84,7 +92,18 @@ The definition provided for this project is in the following file:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
+
+### Swagger
+Once the server is running, go to the browser and type: 
+```
+http://localhost:8080/swagger-ui/index.html
+```
+The swagger menu will be loaded to check the API and its features.
+
+### Postman
 A Postman collection of usecases can be found in the project under the /assets folder, you can import it to your Postman and test the calls.
+
+### Tests
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,5 +128,9 @@ Project Link: [https://github.com/jluisalias/price-evaluator](https://github.com
 [Springboot-url]: https://spring.io/projects/spring-boot
 [OpenAPI]: https://img.shields.io/badge/open%20api-6BA539?style=for-the-badge&logo=openapiinitiative&logoColor=white
 [OpenAPI-url]: https://www.openapis.org/
+[Swagger]: https://img.shields.io/badge/swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=333333
+[Swagger-url]: https://swagger.io/
 [Postman]: https://img.shields.io/badge/postman-FF6C37?style=plastic&logo=postman&logoColor=white
 [Postman-url]: https://www.postman.com/
+
+https://img.shields.io/badge/swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=white
