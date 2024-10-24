@@ -1,24 +1,14 @@
-package org.openapitools.model;
+package com.jlalias.prices.hexagonal.dto;
 
-import java.net.URI;
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.time.OffsetDateTime;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 
-
-import java.util.*;
-import javax.annotation.Generated;
+import java.util.Objects;
 
 /**
- * PriceNotFoundError
+ * PriceNotFoundError This is a copy of the PriceNotFoundError generated from OpenAPI
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-20T14:13:22.291533+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
 public class PriceNotFoundError {
 
   private String message;
@@ -37,10 +27,6 @@ public class PriceNotFoundError {
   @JsonProperty("message")
   public String getMessage() {
     return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
   }
 
   @Override
@@ -62,11 +48,9 @@ public class PriceNotFoundError {
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PriceNotFoundError {\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("}");
-    return sb.toString();
+    return "class PriceNotFoundError {\n" +
+            "    message: " + toIndentedString(message) + "\n" +
+            "}";
   }
 
   /**

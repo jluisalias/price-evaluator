@@ -1,134 +1,81 @@
-package org.openapitools.model;
+package com.jlalias.prices.hexagonal.dto;
 
-import java.net.URI;
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.time.OffsetDateTime;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 
-
-import java.util.*;
-import javax.annotation.Generated;
+import java.util.Objects;
 
 /**
- * ValidPriceResponse
+ * ValidPriceResponse This is a copy of the ValidPriceResponse generated from OpenAPI
  */
-
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-10-20T14:13:22.291533+02:00[Europe/Madrid]", comments = "Generator version: 7.8.0")
 public class ValidPriceResponse {
 
-  private String productId;
+  private final String productId;
 
-  private String brandId;
+  private final String brandId;
 
-  private String priceListId;
+  private final String priceListId;
 
-  private String validityPeriod;
+  private final String validityPeriod;
 
-  private String validPrice;
+  private final String validPrice;
 
-  public ValidPriceResponse productId(String productId) {
+  public ValidPriceResponse(String productId, String brandId, String priceListId, String validityPeriod, String validPrice) {
     this.productId = productId;
-    return this;
+    this.brandId = brandId;
+    this.priceListId = priceListId;
+    this.validityPeriod = validityPeriod;
+    this.validPrice = validPrice;
   }
 
   /**
    * Get productId
    * @return productId
    */
-  
   @Schema(name = "productId", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("productId")
   public String getProductId() {
     return productId;
   }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public ValidPriceResponse brandId(String brandId) {
-    this.brandId = brandId;
-    return this;
-  }
-
+  
   /**
    * Get brandId
    * @return brandId
    */
-  
   @Schema(name = "brandId", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("brandId")
   public String getBrandId() {
     return brandId;
   }
 
-  public void setBrandId(String brandId) {
-    this.brandId = brandId;
-  }
-
-  public ValidPriceResponse priceListId(String priceListId) {
-    this.priceListId = priceListId;
-    return this;
-  }
-
   /**
    * Get priceListId
    * @return priceListId
    */
-  
   @Schema(name = "priceListId", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("priceListId")
   public String getPriceListId() {
     return priceListId;
   }
 
-  public void setPriceListId(String priceListId) {
-    this.priceListId = priceListId;
-  }
-
-  public ValidPriceResponse validityPeriod(String validityPeriod) {
-    this.validityPeriod = validityPeriod;
-    return this;
-  }
-
   /**
    * Get validityPeriod
    * @return validityPeriod
    */
-  
   @Schema(name = "validityPeriod", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("validityPeriod")
   public String getValidityPeriod() {
     return validityPeriod;
   }
-
-  public void setValidityPeriod(String validityPeriod) {
-    this.validityPeriod = validityPeriod;
-  }
-
-  public ValidPriceResponse validPrice(String validPrice) {
-    this.validPrice = validPrice;
-    return this;
-  }
-
+  
   /**
    * Get validPrice
    * @return validPrice
    */
-  
   @Schema(name = "validPrice", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("validPrice")
   public String getValidPrice() {
     return validPrice;
-  }
-
-  public void setValidPrice(String validPrice) {
-    this.validPrice = validPrice;
   }
 
   @Override
@@ -154,15 +101,13 @@ public class ValidPriceResponse {
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ValidPriceResponse {\n");
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    brandId: ").append(toIndentedString(brandId)).append("\n");
-    sb.append("    priceListId: ").append(toIndentedString(priceListId)).append("\n");
-    sb.append("    validityPeriod: ").append(toIndentedString(validityPeriod)).append("\n");
-    sb.append("    validPrice: ").append(toIndentedString(validPrice)).append("\n");
-    sb.append("}");
-    return sb.toString();
+    return "class ValidPriceResponse {\n" +
+            "    productId: " + toIndentedString(productId) + "\n" +
+            "    brandId: " + toIndentedString(brandId) + "\n" +
+            "    priceListId: " + toIndentedString(priceListId) + "\n" +
+            "    validityPeriod: " + toIndentedString(validityPeriod) + "\n" +
+            "    validPrice: " + toIndentedString(validPrice) + "\n" +
+            "}";
   }
 
   /**

@@ -5,6 +5,7 @@ plugins {
 	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.6'
 	id "org.openapi.generator" version "7.8.0"
+	id "io.swagger.core.v3.swagger-gradle-plugin" version "2.2.24"
 }
 
 group = 'com.jlalias'
@@ -22,11 +23,12 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
@@ -41,6 +43,6 @@ tasks.named('jar') {
 openApiGenerate {
 	generatorName.set("spring")
 	inputSpec.set("$rootDir/src/main/resources/prices_evaluator_api_description.yaml")
-	outputDir.set("$rootDir/generated")
+	outputDir.set("$rootDir/build/generated")
 	configOptions.put("dateLibrary", "java8")
 }
