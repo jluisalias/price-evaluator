@@ -101,17 +101,27 @@ http://localhost:8080/swagger-ui/index.html
 The swagger menu will be loaded to check the API and its features.
 
 ### Postman
-A Postman collection of use cases can be found in the project under the /assets folder, you can import it to your Postman and test the calls.
+To execute the end-to-end tests using Postman, first you must import the [Collection JSON File](assets/Price%20Evaluator-collection.json) into your Postman Workspace, additionally you can import the [Environment JSON File](assets/Price%20Evaluator-environment.json), to have some environment variables to manually test the request (Don't forget to switch to the recently imported environment!!!).
+
+Once imported, open the Collection and click on the "Run" icon: <br />
+<img src="assets/run_collection.png" alt="Run Collection">
+
+In Data section, click on "Select File button" and browse and choose one of the two files provided in the assets folder:
+- [Correct Values File](assets/postman_test_correct_inputs.json): are the values provided in the solution definition, the tests should pass.
+- [Wrong Values File](assets/postman_test_wrong_inputs.json): are purposely wrong values that will make the tests fail.
+
+Correct Results:<br />
+<img src="assets/e2e_test_execution.png" alt="End-to-end Test Results">
 
 ### Tests
-To execute the battery of unit and integration tests developed using JUnit, go to the /prices directory, and run:
+To execute the suite of unit and integration tests in the /prices directory, use the following command:
    ```sh
    .gradlew test --info
    ```
-Once finished it should return something like:
+After execution, you should see an output similar to the following:<br />
 <img src="assets/test_execution.png" alt="Test execution" width="1000" height="70">
 
-So, go to your favorite browser, copy the second path, and add "/index.html" to the end, and you could see the test execution report.
+To view the test report, open your browser and navigate to the generated report path. Copy the second path listed in the output, append /index.html, and load this URL in your browser to access a detailed report of the test execution.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
