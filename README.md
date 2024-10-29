@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/jluisalias/price-evaluator">
-    <img src="assets/logo.png" alt="Logo" width="260" height="150">
+    <img src="assets/logo.png" alt="Logo">
   </a>
 
 <h3 align="center">The Price Evaluator API</h3>
@@ -79,7 +79,7 @@ The definition provided for this project is in the following file:
    git clone https://github.com/jluisalias/price-evaluator
    ```
 
-2. Go to /price-evaluator, and run:
+2. Go to /prices, and run:
    ```sh
    .gradlew build
    ```
@@ -101,9 +101,17 @@ http://localhost:8080/swagger-ui/index.html
 The swagger menu will be loaded to check the API and its features.
 
 ### Postman
-A Postman collection of usecases can be found in the project under the /assets folder, you can import it to your Postman and test the calls.
+A Postman collection of use cases can be found in the project under the /assets folder, you can import it to your Postman and test the calls.
 
 ### Tests
+To execute the battery of unit and integration tests developed using JUnit, go to the /prices directory, and run:
+   ```sh
+   .gradlew test --info
+   ```
+Once finished it should return something like:
+<img src="assets/test_execution.png" alt="Test execution" width="1000" height="70">
+
+So, go to your favorite browser, copy the second path, and add "/index.html" to the end, and you could see the test execution report.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
