@@ -1,8 +1,8 @@
-package com.jlalias.prices.hexagonal.adapters;
+package com.jlalias.prices.application.adapters;
 
-import com.jlalias.prices.hexagonal.dto.PriceNotFoundError;
-import com.jlalias.prices.hexagonal.dto.ValidPriceResponse;
-import com.jlalias.prices.hexagonal.ports.PriceEvaluatorApi;
+import com.jlalias.prices.application.dto.PriceNotFoundError;
+import com.jlalias.prices.application.dto.ValidPriceResponse;
+import com.jlalias.prices.application.ports.PriceEvaluatorApi;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;

@@ -1,4 +1,4 @@
-package com.jlalias.prices.hexagonal.ports;
+package com.jlalias.prices.application.ports;
 
 import org.springframework.http.ResponseEntity;
 
