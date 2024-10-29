@@ -3,12 +3,15 @@ package com.jlalias.prices.application.adapter;
 import com.jlalias.prices.application.dto.PriceNotFoundError;
 import com.jlalias.prices.application.dto.ValidPriceResponse;
 import com.jlalias.prices.application.port.PriceEvaluatorApi;
+import com.jlalias.prices.domain.Price;
+import com.jlalias.prices.domain.service.ValidPriceSelector;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,10 +24,18 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/prices/getValidPrice")
 public class PriceEvaluatorRestApiController implements PriceEvaluatorApi {
+
+    private final ValidPriceSelector validPriceSelector;
+    
+    @Autowired
+    public PriceEvaluatorRestApiController(ValidPriceSelector validPriceSelector) {
+        this.validPriceSelector = validPriceSelector;
+    }
 
     /**
      * GET /prices/getValidPrice : Get applicable price for a product
@@ -49,12 +60,15 @@ public class PriceEvaluatorRestApiController implements PriceEvaluatorApi {
             }
     )
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> getValidPrice(
+    public ResponseEntity<ValidPriceResponse> getValidPrice(
             @NotNull @Parameter(name = "applicabilityDate", description = "The date to check the price for", required = true, in = ParameterIn.QUERY)
             @Valid @RequestParam(value = "applicabilityDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicabilityDate,
             @NotNull @Parameter(name = "productId", description = "The ID of the product", required = true, in = ParameterIn.QUERY) @Valid @RequestParam(value = "productId", required = true) String productId,
-            @NotNull @Parameter(name = "brandId", description = "", required = true, in = ParameterIn.QUERY) @Valid @RequestParam(value = "brandId", required = true) String brandId
-    ) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+            @NotNull @Parameter(name = "brandId", description = "", required = true, in = ParameterIn.QUERY) @Valid @RequestParam(value = "brandId", required = true) String brandId) {
+        Optional<Price> optionalPrice = validPriceSelector.pickValidPrice(applicabilityDate, productId, brandId);
+
+        return optionalPrice
+                .map(priceResponse -> ResponseEntity.ok(priceResponse.toDTOResponse()))
+                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
     }
 }

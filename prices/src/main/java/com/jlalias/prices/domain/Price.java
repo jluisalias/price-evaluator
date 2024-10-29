@@ -33,7 +33,7 @@ public class Price {
         return isDateAfterOrEqualsStartDate && isDateBeforeOrEqualsEndDate;
     }
 
-    public ValidPriceResponse getResponseFromPrice() {
+    public ValidPriceResponse toDTOResponse() {
         String validityPeriod = "From ".concat(startDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))).
                 concat(" to "). concat(endDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         String validPrice = String.format("%.2f", priceValue).concat(" ").concat(currency);
