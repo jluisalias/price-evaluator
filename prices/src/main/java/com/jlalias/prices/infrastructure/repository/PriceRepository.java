@@ -1,4 +1,4 @@
-package com.jlalias.prices.infrastructure.repositories;
+package com.jlalias.prices.infrastructure.repository;
 
 import com.jlalias.prices.infrastructure.db.Price;
 import org.springframework.data.jpa.repository.JpaRepository;
