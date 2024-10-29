@@ -84,7 +84,7 @@ The definition provided for this project is in the following file:
    .gradlew build
    ```
 
-   3. Still in the terminal, go to the root folder, and execute:
+3. Still in the terminal, go to the root folder, and execute:
    ```sh 
    docker-compose up
    ```
