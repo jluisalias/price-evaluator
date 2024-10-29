@@ -140,5 +140,3 @@ Project Link: [https://github.com/jluisalias/price-evaluator](https://github.com
 [Swagger-url]: https://swagger.io/
 [Postman]: https://img.shields.io/badge/postman-FF6C37?style=plastic&logo=postman&logoColor=white
 [Postman-url]: https://www.postman.com/
-
-https://img.shields.io/badge/swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=white

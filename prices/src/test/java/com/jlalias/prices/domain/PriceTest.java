@@ -63,8 +63,8 @@ class PriceTest {
     }
 
     @Test
-    void getResponseFromPrice_shouldReturnAResponseWithTheSameDataThanPrice() {
-        ValidPriceResponse response = priceSUT.getResponseFromPrice();
+    void toDTOResponse_shouldReturnAResponseWithTheSameDataThanPrice() {
+        ValidPriceResponse response = priceSUT.toDTOResponse();
         String validityPeriod = "From ".concat(START_DATE_1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))).
                 concat(" to "). concat(END_DATE_1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         String validPrice = String.format("%.2f", 12.50).concat(" ").concat(EUR_CURRENCY);
