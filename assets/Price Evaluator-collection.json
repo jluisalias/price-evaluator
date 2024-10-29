@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "ee880d83-1718-4945-9c4e-1be834d2d42b",
+		"name": "Price Evaluator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "216636"
+	},
+	"item": [
+		{
+			"name": "Pick Valid Price For Date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{user}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/prices/getValidPrice?applicabilityDate={{applicabilityDate}}&productId={{productId}}&brandId={{brandId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"prices",
+						"getValidPrice"
+					],
+					"query": [
+						{
+							"key": "applicabilityDate",
+							"value": "{{applicabilityDate}}"
+						},
+						{
+							"key": "productId",
+							"value": "{{productId}}"
+						},
+						{
+							"key": "brandId",
+							"value": "{{brandId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const schema = {",
+					"    \"type\": \"object\",",
+					"    \"properties\": {",
+					"        \"productId\": {",
+					"            \"type\": \"string\"",
+					"        },",
+					"        \"brandId\": {",
+					"            \"type\": \"string\"",
+					"        },",
+					"        \"priceListId\": {",
+					"            \"type\": \"string\"",
+					"        },",
+					"        \"validityPeriod\": {",
+					"            \"type\": \"string\"",
+					"        },",
+					"        \"validPrice\": {",
+					"            \"type\": \"string\"",
+					"        }",
+					"    },",
+					"    \"required\": [",
+					"        \"productId\",",
+					"        \"brandId\",",
+					"        \"priceListId\",",
+					"        \"validityPeriod\",",
+					"        \"validPrice\"",
+					"    ]",
+					"};",
+					"",
+					"pm.test(\"Status is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test('Schema is valid', function () {",
+					"    pm.response.to.have.jsonSchema(schema);",
+					"});",
+					"",
+					"pm.test(\"Field 'productId' has correct value\", function () {",
+					"    pm.expect(pm.response.json().productId).to.eql(JSON.stringify(data.productId));",
+					"});",
+					"",
+					"pm.test(\"Field 'brandId' has correct value\", function () {",
+					"    pm.expect(pm.response.json().brandId).to.eql(JSON.stringify(data.brandId));",
+					"});"
+				]
+			}
+		}
+	]
+}

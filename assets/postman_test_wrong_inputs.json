@@ -1,0 +1,7 @@
+[
+  { "applicabilityDate": "2020-06-14T10:00:00", "productId": 35055, "brandId": 1 },
+  { "applicabilityDate": "2020-06-14T16:00:00", "productId": 35455, "brandId": 0 },
+  { "applicabilityDate": "", "productId": 35455, "brandId": 1 },
+  { "applicabilityDate": "2020-06-15T10:00:00", "productId": 35455, "brandId": null },
+  { "applicabilityDate": "2020-06-16TXYZZ:00:00", "productId": 35455, "brandId": 1 }
+]
