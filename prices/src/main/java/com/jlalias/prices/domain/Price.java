@@ -44,6 +44,10 @@ public class Price {
         return priority;
     }
 
+    public static Builder createBuilder() {
+        return new Builder();
+    }
+
     public static class Builder {
         private com.jlalias.prices.infrastructure.db.Price priceDB;
 
